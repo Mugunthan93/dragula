@@ -5,20 +5,14 @@
   <meta charset="utf-8" />
   <title>AngularJS Plunker</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body ng-controller="MainCtrl">
 
-  <div class="wrapper">
-    <div class="container" dragula='"first-bag"'>
-      <div>item0.1</div>
-      <div>item0.2</div>
-    </div>
-    <div class="container" dragula='"first-bag"'>
-      <div>item1.1</div>
-      <div>item1.2</div>
-    </div>
-  </div>
+  <li ng-repeat="item in items" dragula='"bag-one"' dragula-model="item" dragula-scope="$parent">
+    {{item}}
+  </li>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
   <script src="dragula.min.js"></script>
