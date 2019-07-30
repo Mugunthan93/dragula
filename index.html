@@ -10,12 +10,16 @@
 
 <body ng-controller="MainCtrl">
 
-  <li ng-repeat="item in items" dragula='"bag-one"' dragula-model="item" dragula-scope="$parent">
-    {{item}}
-  </li>
+  <div class="containersdiv row" ng-repeat="containers in model" dragula='"model"' dragula-model="containers"
+    dragula-scope="$parent">
+    <div class="itemsdiv" ng-class="(item == 'profit') ? ['col-md-12'] : ['col-md-6']" ng-repeat="item in containers"
+      dragula='"containers"' dragula-model="item" dragula-scope="$parent">
+      <div class="itemdiv">{{item}}</div>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-  <script src="dragula.min.js"></script>
+  <script src="dragula.js"></script>
   <script src="app.js"></script>
 </body>
 

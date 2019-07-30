@@ -3,16 +3,26 @@ var app = angular.module('angular-dragula-demo', [angularDragula(angular)]);
 
 app.controller('MainCtrl', function ($scope, dragulaService) {
 
-    console.log(dragulaService);
-
-    dragulaService.options($scope, 'bag-one', {
-        direction: function () {
-            return 'horizontal';
-        }
-    })
-
-    $scope.items = [
-        "one", "two", "three"
+    $scope.model = [
+        [
+            'income',
+            'expense'
+        ],
+        [
+            'profit'
+        ],
+        [
+            'recent',
+            'feed'
+        ],
+        [
+            'client',
+            'file'
+        ]
     ];
+
+
+    dragulaService.options($scope, 'model', {});
+    dragulaService.options($scope, 'containers', {});
 
 });
