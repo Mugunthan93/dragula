@@ -28,14 +28,11 @@
     filter: alpha(opacity=20);
 }
 
-.itemdiv {
-    border: 4px solid green;
-}
 
-.itemsdiv {
+.container {
     border: 3px solid blue;
 }
 
-.containersdiv {
+.item {
     border: 2px solid red;
 }

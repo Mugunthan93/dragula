@@ -10,14 +10,31 @@
 
 <body ng-controller="MainCtrl">
 
-  <div class="containersdiv row" ng-repeat="containers in model" dragula='"model"' dragula-model="containers"
-    dragula-scope="$parent">
-    <div class="itemsdiv" ng-class="(item == 'profit') ? ['col-md-12'] : ['col-md-6']" ng-repeat="item in containers"
-      dragula='"containers"' dragula-model="item" dragula-scope="$parent">
-      <div class="itemdiv">{{item}}</div>
+  <ul class="container row" dragula='"container"' dragula-model="items1">
+    <div class="item col-md-6" ng-class="['{{item.items}}']" ng-repeat="item in items1 track by $index">
+      {{item.items}}
     </div>
-  </div>
+  </ul>
 
+  <ul class="container row" dragula='"container"' dragula-model="items2">
+    <div class="item col-md-12" ng-class="['{{item.items}}']" ng-repeat="item in items2 track by $index">
+      {{item.items}}
+    </div>
+  </ul>
+
+  <ul class="container row" dragula='"container"' dragula-model="items3">
+    <div class="item col-md-6" ng-class="['{{item.items}}']" ng-repeat="item in items3 track by $index">
+      {{item.items}}
+    </div>
+  </ul>
+
+  <ul class="container row" dragula='"container"' dragula-model="items4">
+    <div class="item col-md-6" ng-class="['{{item.items}}']" ng-repeat="item in items4 track by $index">
+      {{item.items}}
+    </div>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
   <script src="dragula.js"></script>
   <script src="app.js"></script>
